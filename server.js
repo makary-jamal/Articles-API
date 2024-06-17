@@ -28,6 +28,7 @@ app.post("/", async (req, res) => {
     description: "Description 1",
     url: "https://www.example.com",
     photo_link: "https://www.example.com/photo.jpg",
+    category : "Category1",
   });
 
   try {
