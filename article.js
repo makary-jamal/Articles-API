@@ -6,7 +6,7 @@ const articleSchema = new mongoose.Schema(
     description: String,
     url: String,
     photo_link: String,
-    category : String
+    category : String,
   },
   {
     timestamps: true,
