@@ -78,6 +78,8 @@ app.get("/:id", async (req, res) => {
   }
 });
 
+// Get an article by Category
+
 app.get("/:category", async (req, res) => {
   try {
     const article = await Article.findById(req.params.category);
