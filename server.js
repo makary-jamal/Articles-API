@@ -82,10 +82,10 @@ app.get("/:id", async (req, res) => {
 
 app.get("/:category", async (req, res) => {
   try {
-    const article = await Article.find(req.params.category);
+    const article1 = await Article.find(req.category);
     res.status(200).json({
       status: "success",
-      data: article,
+      data: article1,
     });
   } catch (err) {
     res.status(404).json({
