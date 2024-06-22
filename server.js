@@ -82,7 +82,7 @@ app.get("/:id", async (req, res) => {
 
 app.get("/:category", async (req, res) => {
   try {
-    const article = await Article.findById(req.params.category);
+    const article = await Article.find(req.params.category);
     res.status(200).json({
       status: "success",
       data: article,
