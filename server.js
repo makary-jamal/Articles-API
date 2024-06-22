@@ -78,6 +78,21 @@ app.get("/:id", async (req, res) => {
   }
 });
 
+app.get("/:category", async (req, res) => {
+  try {
+    const article = await Article.findById(req.params.category);
+    res.status(200).json({
+      status: "success",
+      data: article,
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: "error",
+      message: err,
+    });
+  }
+});
+
 const port = 3000;
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
