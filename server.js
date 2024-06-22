@@ -80,20 +80,22 @@ app.get("/:id", async (req, res) => {
 
 // Get an article by Category
 
-app.get("/:category", async (req, res) => {
+app.get("/category/:category", async (req, res) => {
   try {
-    const article1 = await Article.find(req.category);
+    const category = req.params.category;
+    const articles = await Article.find({ category: category });
     res.status(200).json({
       status: "success",
-      data: article1,
+      data: articles,
     });
   } catch (err) {
     res.status(404).json({
       status: "error",
-      message: err,
+      message: err.message,
     });
   }
 });
+
 
 const port = 3000;
 app.listen(port, () => {
